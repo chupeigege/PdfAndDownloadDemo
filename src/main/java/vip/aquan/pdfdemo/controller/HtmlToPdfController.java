@@ -43,6 +43,14 @@ public class HtmlToPdfController {
     public String exportPdf(@RequestParam(value = "content") String content,@RequestParam(value = "name",required = false) String name, HttpServletRequest request) throws Exception {
 //        String content = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Title</title>\n</head>\n<body>\n<h1>哈哈哈哈哈</h1>\n</body>\n</html>";
 
+        /*
+        导出分页时出现图表被切割，在页面加以下代码可解决
+        <style>
+          div{
+              page-break-inside: avoid;
+          }
+          </style>
+         */
         if (StringUtils.isBlank(name)) {
             name = UUID.randomUUID().toString().replace("-", "");
         }
