@@ -21,6 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 导出pdf接口，需要wkhtmltopdf插件，插件位置在HtmlToPdf类中配置
+ * linux环境下装wkhtmltopdf：https://blog.csdn.net/u012561176/article/details/86487664
  *
  * @author wcp
  * @date 2019/12/25
@@ -33,6 +34,9 @@ public class HtmlToPdfController {
 
     private static final String PDF_RELATIVE_PATH = File.separator + "static" + File.separator + "pdf";
 
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.out.println(URLEncoder.encode("<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Title</title>\n</head>\n<body>\n<h1>哈哈哈哈哈</h1>\n</body>\n</html>", "UTF-8"));
+    }
 
     /**
      * 导出pdf
